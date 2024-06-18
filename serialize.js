@@ -16,4 +16,4 @@ fastify.get('/user', {
     return { id: 1, name: 'John Doe' };
 });
 
-fastify.listen(3000);
+fastify.listen({ port: 3000, host: '0.0.0.0' });

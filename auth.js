@@ -17,4 +17,4 @@ fastify.post('/login', async (request, reply) => {
     return { token };
 });
 
-fastify.listen(3000);
+fastify.listen({ port: 3000, host: '0.0.0.0' });

@@ -1,27 +1,15 @@
 const fastify = require('fastify')();
-const cors_plugin = require('@fastify/cors')
 
 // Example: Registering a CORS plugin
-
-fastify.register(cors_plugin, {
-
+fastify.register(require('@fastify/cors'), {
     origin: '*'
-
 });
-
 
 fastify.get('/', async (request, reply) => {
-
-    return {hello: 'world'};
-
+    return { hello: 'world' };
 });
 
-
-fastify.listen(3000, err => {
-
+fastify.listen({ port: 3000, host: '0.0.0.0' }, err => {
     if (err) throw err;
-
     console.log('Server listening on http://localhost:3000');
-
 });
-
